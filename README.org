@@ -1,28 +1,26 @@
 #+Title: Disk or direct impact?
 #+author: Mathieu Renzo
 
- When mass transfer starts in a stellar binary, matter flows through
- the first Lagrangian point L1 in between the stars. This repo
- visualizes when this stream "misses" the accretor and circularizes in
- a disk around it, or when instead the stream hits directly the
- accretor.
+** Disclaimer
 
- The folder =/src/= contains in ipython notebook to visualize the fit
- from [[https://ui.adsabs.harvard.edu/abs/1976ApJ...206..509U/abstract][Ulrich & Burger 1976]] to the numerical simulations of
- [[https://ui.adsabs.harvard.edu/abs/1975ApJ...198..383L/abstract][Lubow & Shu 1975]] of the distance of minimum approach of the
- stream R_{min. We use a simple mass radius relation to model the
- accretor radius R_{2}, and assume a disk is formed only if:
+ *Please [[mailto:mrenzo@flatironinstitute.org][contact me]] before using this*. This relies on old numerical
+ simulations (albeit still state-of-the-art), and severe
+ approximations that we can improve on.
 
-#+begin_src tex
+** Simple explanation
 
-R_{min} > R_{2}
+  When mass transfer starts in a stellar binary, matter flows through
+  the first Lagrangian point L1 in between the stars. This repo
+  visualizes when this stream "misses" the accretor and circularizes in
+  a disk around it, or when instead the stream hits directly the
+  accretor.
 
-#+end_src
-
-*Please [[mailto:mrenzo@flatironinstitute.org][contact me]] before using this*. This visualization relies on old
-numerical simulations (albeit still state-of-the-art), and severe
-approximations that we can improve on.
-
+  The folder =/src/= contains in ipython notebook to visualize the fit
+  from [[https://ui.adsabs.harvard.edu/abs/1976ApJ...206..509U/abstract][Ulrich & Burger 1976]] to the numerical simulations of
+  [[https://ui.adsabs.harvard.edu/abs/1975ApJ...198..383L/abstract][Lubow & Shu 1975]] of the distance of minimum approach of the
+  stream R_{min}. We use a simple mass radius relation to model the
+  accretor radius R_{2}, and assume a disk is formed only if R_{min} > R_{2},
+  else the stream impacts directly the accreting star.
 
 ** Figures
 
