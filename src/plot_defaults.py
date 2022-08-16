@@ -1,6 +1,6 @@
 # author: Mathieu Renzo
 
-# Author: Mathieu Renzo <mathren90@gmail.com>
+# Author: Mathieu Renzo <mrenzo@flatironinstitute.org>
 # Keywords: files
 
 # Copyright (C) 2019-2022 Mathieu Renzo
@@ -22,11 +22,14 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 from matplotlib import rc
 from matplotlib import rcParams
+
 # from matplotlib.ticker import MultipleLocator, FormatStrFormatter, FuncFormatter, MaxNLocator
 import matplotlib.gridspec as gridspec
+
 # import matplotlib.patches as mpatch
 from mpl_toolkits.axes_grid1.inset_locator import inset_axes, zoomed_inset_axes
 from mpl_toolkits.axes_grid1.inset_locator import mark_inset
+
 
 def set_plot_defaults_from_matplotlibrc(root="../src/figures/"):
     """
@@ -44,23 +47,26 @@ def set_plot_defaults_from_matplotlibrc(root="../src/figures/"):
     # it will not work as intended. Run it in a separate cell and it works.
     # TODO: understand and fix this behavior.
     from matplotlib import rcParams
-    with open(root+"/matplotlibrc", "r") as f:
+
+    with open(root + "/matplotlibrc", "r") as f:
         for i, line in enumerate(f):
             L = line.rstrip().lstrip()
-            if not L: continue # skip empty lines
-            if L[0] != "#": # skip commented lines
+            if not L:
+                continue  # skip empty lines
+            if L[0] != "#":  # skip commented lines
                 # read the line
                 uncommented_line = L.split("#")[0].rstrip().lstrip()
                 group_param = uncommented_line.split(":")[0].rstrip().lstrip()
                 val = uncommented_line.split(":")[-1].rstrip().lstrip()
                 # fix figsize
                 if "figsize" in group_param:
-                    length = tuple(val.split(','))
+                    length = tuple(val.split(","))
                 rcParams[group_param] = val
     print("done reading matplotlibrc")
 
+
 def set_plot_defaults():
-    """ old way of setting up defaults, maintained for legacy """
+    """old way of setting up defaults, maintained for legacy"""
     try:
         set_plot_defaults_from_matplotlibrc(".")
         return
@@ -111,19 +117,27 @@ def set_plot_defaults():
 # ---------------------------------------------------------------------
 # auxiliary functions for plotting
 
+
 def make2Dmap(x, y, z, x1=0, x2=1, y1=0, y2=1, res=20):
-    minx = min(min(x),x1)
-    maxx = min(max(x),x2)
-    miny = min(min(y),y1)
-    maxy = min(max(y),y2)
+    minx = min(min(x), x1)
+    maxx = min(max(x), x2)
+    miny = min(min(y), y1)
+    maxy = min(max(y), y2)
 
-    x_int = np.linspace(minx,maxx,res)
-    y_int = np.linspace(miny,maxy,res)
+    x_int = np.linspace(minx, maxx, res)
+    y_int = np.linspace(miny, maxy, res)
 
-    mat = np.zeros([len(x_int),len(y_int)])
-    for i in range(0,len(x_int)-1):
-        for j in range(0,len(y_int)-1):
-            mat[j,i] = np.sum(z[(x>=x_int[i])*(x<x_int[i+1])*(y>=y_int[j])*(y<y_int[j+1])])
+    mat = np.zeros([len(x_int), len(y_int)])
+    for i in range(0, len(x_int) - 1):
+        for j in range(0, len(y_int) - 1):
+            mat[j, i] = np.sum(
+                z[
+                    (x >= x_int[i])
+                    * (x < x_int[i + 1])
+                    * (y >= y_int[j])
+                    * (y < y_int[j + 1])
+                ]
+            )
     return x_int, y_int, mat
 
 
@@ -133,12 +147,29 @@ def writePreliminary(ax):
     ----------
     ax: `maplotlib.axes`
     """
-    ax.text(0.5,0.5,r"{\bf PRELIMINARY}", color="#808080",
-            alpha=0.4, fontsize=74,ha='center', va='center', rotation=45, transform=ax.transAxes)
+    ax.text(
+        0.5,
+        0.5,
+        r"{\bf PRELIMINARY}",
+        color="#808080",
+        alpha=0.4,
+        fontsize=74,
+        ha="center",
+        va="center",
+        rotation=45,
+        transform=ax.transAxes,
+    )
 
 
-def my_mark_inset(parent_axes, inset_axes, loc1a=1, loc1b=1, loc2a=2, loc2b=2, **kwargs):
-    from mpl_toolkits.axes_grid1.inset_locator import TransformedBbox, BboxPatch, BboxConnector
+def my_mark_inset(
+    parent_axes, inset_axes, loc1a=1, loc1b=1, loc2a=2, loc2b=2, **kwargs
+):
+    from mpl_toolkits.axes_grid1.inset_locator import (
+        TransformedBbox,
+        BboxPatch,
+        BboxConnector,
+    )
+
     rect = TransformedBbox(inset_axes.viewLim, parent_axes.transData)
 
     pp = BboxPatch(rect, fill=False, **kwargs)

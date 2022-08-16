@@ -15,12 +15,12 @@
   a disk around it, or when instead the stream hits directly the
   accretor.
 
-  The folder =/src/= contains in ipython notebook to visualize the fit
-  from [[https://ui.adsabs.harvard.edu/abs/1976ApJ...206..509U/abstract][Ulrich & Burger 1976]] to the numerical simulations of
-  [[https://ui.adsabs.harvard.edu/abs/1975ApJ...198..383L/abstract][Lubow & Shu 1975]] of the distance of minimum approach of the
-  stream R_{min}. We use a simple mass radius relation to model the
-  accretor radius R_{2}, and assume a disk is formed only if R_{min} > R_{2},
-  else the stream impacts directly the accreting star.
+  The script =/src/disk_vs_accretion.py= contains functions to visualize
+  the fit from [[https://ui.adsabs.harvard.edu/abs/1976ApJ...206..509U/abstract][Ulrich & Burger 1976]] to the numerical simulations of
+  [[https://ui.adsabs.harvard.edu/abs/1975ApJ...198..383L/abstract][Lubow & Shu 1975]] of the distance of minimum approach of the stream
+  R_{min}. We use a simple mass radius relation to model the accretor
+  radius R_{2}, and assume a disk is formed only if R_{min} > R_{2}, else the
+  stream impacts directly the accreting star.
 
 ** Figures
 
