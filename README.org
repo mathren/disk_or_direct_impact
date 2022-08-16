@@ -1,2 +1,40 @@
 #+Title: Disk or direct impact?
 #+author: Mathieu Renzo
+
+ When mass transfer starts in a stellar binary, matter flows through
+ the first Lagrangian point L1 in between the stars. This repo
+ visualizes when this stream "misses" the accretor and circularizes in
+ a disk around it, or when instead the stream hits directly the
+ accretor.
+
+ The folder =/src/= contains in ipython notebook to visualize the fit
+ from [][Ulrich & Burger 1976] to the numerical simulations of
+ [][Lubow & Shu 1975] of the distance of minimum approach of the
+ stream R_{min. We use a simple mass radius relation to model the
+ accretor radius R_{2}, and assume a disk is formed only if
+
+#+begin_src tex
+
+R_{min} > R_{2}
+
+#+end_src
+
+** Figures
+
+   Parameter space for direct impact vs. disk formation for a 35M_{\odot}
+   donor as a function of ZAMS mass ratio and separation.
+
+   Disks form only with large separations and mass ratios even when
+   neglecting the evolution of the secondary, which usually is
+   assumed to lead to common envelope:
+
+#+DOWNLOADED: screenshot @ 2022-08-16 10:05:49
+[[file:.org_notes_figures/2022-08-16_10-05-49_screenshot.png]]
+
+
+
+  Same as above, but with varying donor masses as labeled. As the
+  donor mass increases the parameter space for disk formation shrinks:
+
+#+DOWNLOADED: screenshot @ 2022-08-16 10:06:09
+[[file:.org_notes_figures/2022-08-16_10-06-09_screenshot.png]]
