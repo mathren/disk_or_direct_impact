@@ -30,7 +30,11 @@
 
    These were used in this joint talk ([[https://users.flatironinstitute.org/~mrenzo/materials/slides/Renzo_Farmer_open_prob_bin.pdf][slides]]) with [[https://github.com/rjfarmer][rjfarmer]] at the
    KITP workshop "Bridging the Gap: Accretion and Orbital Evolution in
-   Stellar and Black Hole Binaries" in 2022.
+   Stellar and Black Hole Binaries" in 2022. *N.B.:* those figures where
+   affected by a bug found by R. Valli, which resulted in
+   overestimating the range for direct accretion. This has now been
+   fixed.
+
 
 *** 35M_{\odot} donor star
     Parameter space for direct impact vs. disk formation for a 35M_{\odot}
@@ -40,8 +44,10 @@
     neglecting the evolution of the secondary, which usually is
     assumed to lead to common envelope:
 
- #+DOWNLOADED: screenshot @ 2022-08-16 10:05:49
- [[file:.org_notes_figures/2022-08-16_10-05-49_screenshot.png]]
+
+#+DOWNLOADED: screenshot @ 2024-01-25 12:00:34
+[[file:.org_notes_figures/Figures/2024-01-25_12-00-34_screenshot.png]]
+
 
 
 *** Varying donor star mass
@@ -49,5 +55,6 @@
    Same as above, but with varying donor masses as labeled. As the
    donor mass increases the parameter space for disk formation shrinks:
 
- #+DOWNLOADED: screenshot @ 2022-08-16 10:06:09
- [[file:.org_notes_figures/2022-08-16_10-06-09_screenshot.png]]
+
+#+DOWNLOADED: screenshot @ 2024-01-25 12:01:05
+[[file:.org_notes_figures/Figures/2024-01-25_12-01-05_screenshot.png]]

@@ -25,12 +25,12 @@ from plot_defaults import *
 
 def Rmin_lubow_shu75(sep, Macc, Mdonor):
     """Returns the minimum radial distance from the accretor of the RLOF stream, the
-    formula os the fit from Ulrich & Burger 1976 to the simulations of Lubow & Shu 1975.
+    formula of the fit from Ulrich & Burger 1976 to the simulations of Lubow & Shu 1975.
 
     if the number returned is smaller than the accretor radius: direct impact
     """
     q = Macc / Mdonor
-    return 0.00425 * sep * (q + q ** 2) ** 0.25
+    return 0.0425 * sep * (q + q ** 2) ** 0.25
 
 
 def get_R_from_mass_radius_rel(M, exp=0.6):
@@ -95,7 +95,7 @@ def disk_or_hit_no_R2_evol(M1=35, N=50, fig_name=None):
     ax.set_title(r"$M_1 = " + f"{M1:.0f}" + "M_\odot$", size=30)
 
     mass_ratio = np.linspace(0.001, 1, N)
-    sep = np.linspace(0.1, 2000, N)
+    sep = np.linspace(0.1, 300, N)
     direct_hit = -1.0 * np.ones((N, N))
 
     for i, q in np.ndenumerate(mass_ratio):
@@ -121,7 +121,7 @@ def disk_or_hit_no_R2_evol(M1=35, N=50, fig_name=None):
     ax.text(
         0.1,
         0.9,
-        "Direct impact",
+        "Direct\nimpact",
         fontsize=30,
         va="center",
         ha="left",
@@ -166,7 +166,7 @@ def boundary_multiple_masses(primary_masses, N=50, fig_name=None):
     ax = fig.add_subplot(gs[:, :])
 
     mass_ratio = np.linspace(0.001, 1, N)
-    sep = np.linspace(0.1, 2000, N)
+    sep = np.linspace(0.1, 300, N)
 
     colors = plt.cm.viridis(np.linspace(0, 1, len(primary_masses)))
 
@@ -195,7 +195,7 @@ def boundary_multiple_masses(primary_masses, N=50, fig_name=None):
     ax.text(
         0.1,
         0.9,
-        "Direct impact",
+        "Direct\nimpact",
         fontsize=30,
         va="center",
         ha="left",
