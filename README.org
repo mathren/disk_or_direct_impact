@@ -31,7 +31,7 @@
    These were used in this joint talk ([[https://users.flatironinstitute.org/~mrenzo/materials/slides/Renzo_Farmer_open_prob_bin.pdf][slides]]) with [[https://github.com/rjfarmer][rjfarmer]] at the
    KITP workshop "Bridging the Gap: Accretion and Orbital Evolution in
    Stellar and Black Hole Binaries" in 2022. *N.B.:* those figures where
-   affected by a bug found by R. Valli, which resulted in
+   affected by a bug found by [[https://github.com/ruggero-valli][R. Valli]], which resulted in
    overestimating the range for direct accretion. This has now been
    fixed.
 
